@@ -1,0 +1,24 @@
+{
+  "name": "cypress-project",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "test01": "cypress run",
+  "allure:generate": "allure generate allure-results --clean -o allure-report",
+  "allure:open": "allure open allure-report"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "cypress": "^13.17.0"
+  },
+  "devDependencies": {
+    "@shelex/cypress-allure-plugin": "^2.40.2",
+    "cypress-xpath": "^2.0.1",
+    "mochawesome": "^7.1.3",
+    "mochawesome-merge": "^5.0.0",
+    "mochawesome-report-generator": "^6.2.0"
+  }
+}
