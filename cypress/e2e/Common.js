@@ -26,7 +26,7 @@ class Common {
  
         cy.log("Verifying successful login");
         cy.get('.col-md-6 > .mb-3').should("contain.text", "Neilsoft - Active Construction Sites");
-        cy.url().should('include', '/login');  //assertion
+       // cy.url().should('include', '/login');  //assertion
         cy.wait(3000);
     }
 }

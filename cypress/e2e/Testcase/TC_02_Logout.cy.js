@@ -68,16 +68,9 @@ describe("Logout Test Case", () => {
 
         const com = new Common();
         com.loginProcess();
-
-        cy.allure().feature('Logout');
-        cy.allure().story('User logs out successfully');
-        cy.allure().severity('critical');
-
-        cy.allure().step('Click logout button');
+       
         cy.get('.power > img').click();
-
-        cy.allure().step('Confirm logout');
-        cy.xpath("//button[normalize-space()='Yes']").should('be.visible').click();
+        cy.xpath("//button[normalize-space()='Yes']").should('be.visible').click(); //assertion
 
         // Assert that the user is redirected to the login page after logout
         cy.url().should('include', '/login');

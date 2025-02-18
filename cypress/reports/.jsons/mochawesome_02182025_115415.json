@@ -1,0 +1,91 @@
+{
+  "stats": {
+    "suites": 0,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-02-18T06:24:05.107Z",
+    "end": "2025-02-18T06:24:15.077Z",
+    "duration": 9970,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "155a7e19-5f2b-4bb1-a7ea-353569d53d8b",
+      "title": "",
+      "fullFile": "cypress\\e2e\\Testcase\\TC_07_Add building.cy.js",
+      "file": "cypress\\e2e\\Testcase\\TC_07_Add building.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [
+        {
+          "title": "Construct monitor",
+          "fullTitle": "Construct monitor",
+          "timedOut": null,
+          "duration": 9940,
+          "state": "failed",
+          "speed": null,
+          "pass": false,
+          "fail": true,
+          "pending": false,
+          "context": "[\n  {\n    \"title\": \"cypress-mochawesome-reporter-videos-failed\",\n    \"value\": \"cypress\\\\e2e\\\\Testcase\\\\TC_07_Add building.cy.js\"\n  },\n  {\n    \"title\": \"cypress-mochawesome-reporter-screenshots\",\n    \"value\": [\n      [\n        \"\\\\TC_07_Add building.cy.js\\\\Construct monitor (failed).png\"\n      ]\n    ]\n  }\n]",
+          "code": "cy.visit('http://10.1.0.83/#/login');\ncy.viewport(1920, 1080); // Full HD resolution\ncy.get('#acceptBtn').click();\n// Fetch email & password from Cypress config\ncy.get('#email').type(`${Cypress.env(\"email\")}{Enter}`);\ncy.get('#exampleInputPassword1').type(`${Cypress.env(\"password\")}{Enter}`);\ncy.wait(1000);\ncy.xpath(\"//div/input[1]\").type(`${Cypress.env(\"OTP\")}{Enter}`);\ncy.wait(3000);\ncy.get('.col-md-9 > .btn').click();",
+          "err": {
+            "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `.col-md-9 > .btn`, but never found it.",
+            "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `.col-md-9 > .btn`, but never found it.\n    at Context.eval (webpack://cypress-project/./cypress/e2e/Testcase/TC_07_Add building.cy.js:20:9)",
+            "diff": null
+          },
+          "uuid": "d7cc4c4e-6276-45bc-8b80-bcb046cc09e4",
+          "parentUUID": "155a7e19-5f2b-4bb1-a7ea-353569d53d8b",
+          "isHook": false,
+          "skipped": false
+        }
+      ],
+      "suites": [],
+      "passes": [],
+      "failures": [
+        "d7cc4c4e-6276-45bc-8b80-bcb046cc09e4"
+      ],
+      "pending": [],
+      "skipped": [],
+      "duration": 9940,
+      "root": true,
+      "rootEmpty": false,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress\\reports\\.jsons",
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "timestamp": "mmddyyyy_HHMMss"
+      },
+      "version": "6.2.0"
+    }
+  }
+}
