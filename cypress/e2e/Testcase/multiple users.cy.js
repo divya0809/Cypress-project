@@ -1,46 +1,66 @@
-import 'cypress-xpath';
+/*import 'cypress-xpath';
+import { readExcel } from '../../support/readExcel.js';
+describe('Login Test for Multiple Users', () => {
+  before(() => {
+    cy.readExcel('cypress/fixtures/users.xlsx', 'Users').then((users) => {
+      cy.wrap(users).as('userData');
+    });
+  });
 
-describe('Login Test with Multiple Users', () => {
-  // Access users array from Cypress environment
-  const users = Cypress.env('users');
-  
-  // Loop through each user and run the test
-  users.forEach((user) => {
-    it(`should log in as ${user.username}`, () => {
-      // Ensure document is fully loaded
-      
-      cy.window().then((win) => {
-        cy.wrap(win).its('document.readyState').should('eq', 'complete');
-      });
+  it('should login with multiple users', function() {
+    cy.get('@userData').then((users) => {
+      users.forEach((user) => {
+        cy.visit('http://10.1.0.83/#/login');
+        
+        cy.get('#email').type(`${Cypress.env("email")}{Enter}`);
+        cy.get('#exampleInputPassword1').type(`${Cypress.env("password")}{Enter}`);
+        cy.wait(1000);
+        cy.xpath("//div/input[1]").type(`${Cypress.env("OTP")}{Enter}`);
+        cy.wait(3000);
 
-      cy.visit('/'); // Use baseUrl from config
-      cy.viewport(1920, 1080); // Full HD resolution
-      
-      // Accept cookies or terms (if applicable)
-      cy.get('#acceptBtn').should('be.visible').click();
-      
-      //cy.pause(); // Debugging Pause
-
-      // Use user-specific credentials
-      cy.get('#email').should('be.visible').type(`${user.username}{Enter}`);
-      cy.get('#exampleInputPassword1').should('be.visible').type(`${user.password}{Enter}`);
-      cy.wait(1000); // Consider replacing with a more robust wait if needed
-    
-      cy.xpath("//div/input[1]").should('be.visible').type(`${Cypress.env("OTP")}{Enter}`);
-  
-      // Assert successful login
-      //cy.get('.col-md-6 > .mb-3').should("contain.text", "Neilsoft - Active Construction Sites");
-      
-      // Optional: Logout to reset for the next user
-      cy.get('.power > img').should('be.visible').click();
-      //cy.xpath("//button[normalize-space()='Yes']").should('be.visible').click();
-      cy.get('.modal-backdrop').should('not.exist'), { force: true };
-      
-      // Confirm document state is complete before ending test
-      cy.window().then((win) => {
-        cy.wrap(win).its('document.readyState').should('eq', 'complete');
+        // Add assertions as needed
+        cy.url().should('include', '/dashboard');
+        
+        // Logout before the next iteration
+        cy.get('#logoutButton').click();
       });
     });
   });
 });
+*/
+import 'cypress-xpath';
+import { readExcel } from '../../support/readExcel.js';
 
+describe('Login Test for Multiple Users', () => {
+  let users;  // Declare a variable to store users data
+
+  before(() => {
+    // Read the Excel file before the test begins
+    cy.fixture('users01.xlsx').then((fileData) => {
+      users = readExcel(fileData); // Parse the Excel file data here
+
+        
+      //users = readExcel('../../fixtures/users01.xlsx')
+   });
+
+  });
+
+  it('should login with multiple users', () => {
+    users.forEach((user) => {
+      cy.visit('http://10.1.0.83/#/login');
+      
+      // Use user data instead of environment variables
+      cy.get('#email').type(user.email);  // Use email from Excel data
+      cy.get('#exampleInputPassword1').type(user.password);  // Use password from Excel data
+      cy.wait(1000);
+      cy.xpath("//div/input[1]").type(user.otp);  // Use OTP from Excel data
+      cy.wait(3000);
+
+      // Add assertions as needed
+      cy.url().should('include', '/dashboard');
+      
+      // Logout before the next iteration
+      cy.get('#logoutButton').click();
+    });
+  });
+});

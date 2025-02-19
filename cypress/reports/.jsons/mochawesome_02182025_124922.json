@@ -1,0 +1,156 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 0,
+    "pending": 0,
+    "failures": 3,
+    "start": "2025-02-18T07:19:02.055Z",
+    "end": "2025-02-18T07:19:22.744Z",
+    "duration": 20689,
+    "testsRegistered": 3,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "4c858d0d-73f5-4163-9b33-3e4fb04dae7e",
+      "title": "",
+      "fullFile": "cypress\\e2e\\Testcase\\multiple users.cy.js",
+      "file": "cypress\\e2e\\Testcase\\multiple users.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "92e830d1-4e23-4fcc-9e82-0de71e4da40e",
+          "title": "Login Test with Multiple Users",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should log in as purva.bharambe@neilsoft.com",
+              "fullTitle": "Login Test with Multiple Users should log in as purva.bharambe@neilsoft.com",
+              "timedOut": null,
+              "duration": 6836,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "[\n  {\n    \"title\": \"cypress-mochawesome-reporter-videos-failed\",\n    \"value\": \"cypress\\\\e2e\\\\Testcase\\\\multiple users.cy.js\"\n  },\n  {\n    \"title\": \"cypress-mochawesome-reporter-screenshots\",\n    \"value\": [\n      [\n        \"\\\\multiple users.cy.js\\\\Login Test with Multiple Users -- should log in as purva.bharambe@neilsoft.com (failed).png\"\n      ]\n    ]\n  }\n]",
+              "code": "// Ensure document is fully loaded\ncy.window().then(win => {\n  cy.wrap(win).its('document.readyState').should('eq', 'complete');\n});\ncy.visit('/'); // Use baseUrl from config\ncy.viewport(1920, 1080); // Full HD resolution\n// Accept cookies or terms (if applicable)\ncy.get('#acceptBtn').should('be.visible').click();\n//cy.pause(); // Debugging Pause\n// Use user-specific credentials\ncy.get('#email').should('be.visible').type(`${user.username}{Enter}`);\ncy.get('#exampleInputPassword1').should('be.visible').type(`${user.password}{Enter}`);\ncy.wait(1000); // Consider replacing with a more robust wait if needed\ncy.xpath(\"//div/input[1]\").should('be.visible').type(`${Cypress.env(\"OTP\")}{Enter}`);\n// Assert successful login\n//cy.get('.col-md-6 > .mb-3').should(\"contain.text\", \"Neilsoft - Active Construction Sites\");\n// Optional: Logout to reset for the next user\ncy.get('.power > img').should('be.visible').click();\n//cy.xpath(\"//button[normalize-space()='Yes']\").should('be.visible').click();\ncy.get('.modal-backdrop').should('not.exist'), {\n  force: true\n};\n// Confirm document state is complete before ending test\ncy.window().then(win => {\n  cy.wrap(win).its('document.readyState').should('eq', 'complete');\n});",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected <div.modal-backdrop.fade.show> not to exist in the DOM, but it was continuously found.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected <div.modal-backdrop.fade.show> not to exist in the DOM, but it was continuously found.\n    at Context.eval (webpack://cypress-project/./cypress/e2e/Testcase/multiple users.cy.js:37:32)",
+                "diff": null
+              },
+              "uuid": "a1b3709b-9043-4374-abbe-8a0f9153a64c",
+              "parentUUID": "92e830d1-4e23-4fcc-9e82-0de71e4da40e",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should log in as divya.chaudhari@neilsoft.com",
+              "fullTitle": "Login Test with Multiple Users should log in as divya.chaudhari@neilsoft.com",
+              "timedOut": null,
+              "duration": 6741,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "[\n  {\n    \"title\": \"cypress-mochawesome-reporter-videos-failed\",\n    \"value\": \"cypress\\\\e2e\\\\Testcase\\\\multiple users.cy.js\"\n  },\n  {\n    \"title\": \"cypress-mochawesome-reporter-screenshots\",\n    \"value\": [\n      [\n        \"\\\\multiple users.cy.js\\\\Login Test with Multiple Users -- should log in as divya.chaudhari@neilsoft.com (failed).png\"\n      ]\n    ]\n  }\n]",
+              "code": "// Ensure document is fully loaded\ncy.window().then(win => {\n  cy.wrap(win).its('document.readyState').should('eq', 'complete');\n});\ncy.visit('/'); // Use baseUrl from config\ncy.viewport(1920, 1080); // Full HD resolution\n// Accept cookies or terms (if applicable)\ncy.get('#acceptBtn').should('be.visible').click();\n//cy.pause(); // Debugging Pause\n// Use user-specific credentials\ncy.get('#email').should('be.visible').type(`${user.username}{Enter}`);\ncy.get('#exampleInputPassword1').should('be.visible').type(`${user.password}{Enter}`);\ncy.wait(1000); // Consider replacing with a more robust wait if needed\ncy.xpath(\"//div/input[1]\").should('be.visible').type(`${Cypress.env(\"OTP\")}{Enter}`);\n// Assert successful login\n//cy.get('.col-md-6 > .mb-3').should(\"contain.text\", \"Neilsoft - Active Construction Sites\");\n// Optional: Logout to reset for the next user\ncy.get('.power > img').should('be.visible').click();\n//cy.xpath(\"//button[normalize-space()='Yes']\").should('be.visible').click();\ncy.get('.modal-backdrop').should('not.exist'), {\n  force: true\n};\n// Confirm document state is complete before ending test\ncy.window().then(win => {\n  cy.wrap(win).its('document.readyState').should('eq', 'complete');\n});",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected <div.modal-backdrop.fade.show> not to exist in the DOM, but it was continuously found.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected <div.modal-backdrop.fade.show> not to exist in the DOM, but it was continuously found.\n    at Context.eval (webpack://cypress-project/./cypress/e2e/Testcase/multiple users.cy.js:37:32)",
+                "diff": null
+              },
+              "uuid": "86ed30ce-a1fa-46e7-9caa-e1633153732c",
+              "parentUUID": "92e830d1-4e23-4fcc-9e82-0de71e4da40e",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should log in as saurabh.pawar@neilsoft.com",
+              "fullTitle": "Login Test with Multiple Users should log in as saurabh.pawar@neilsoft.com",
+              "timedOut": null,
+              "duration": 7013,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "[\n  {\n    \"title\": \"cypress-mochawesome-reporter-videos-failed\",\n    \"value\": \"cypress\\\\e2e\\\\Testcase\\\\multiple users.cy.js\"\n  },\n  {\n    \"title\": \"cypress-mochawesome-reporter-screenshots\",\n    \"value\": [\n      [\n        \"\\\\multiple users.cy.js\\\\Login Test with Multiple Users -- should log in as saurabh.pawar@neilsoft.com (failed).png\"\n      ]\n    ]\n  }\n]",
+              "code": "// Ensure document is fully loaded\ncy.window().then(win => {\n  cy.wrap(win).its('document.readyState').should('eq', 'complete');\n});\ncy.visit('/'); // Use baseUrl from config\ncy.viewport(1920, 1080); // Full HD resolution\n// Accept cookies or terms (if applicable)\ncy.get('#acceptBtn').should('be.visible').click();\n//cy.pause(); // Debugging Pause\n// Use user-specific credentials\ncy.get('#email').should('be.visible').type(`${user.username}{Enter}`);\ncy.get('#exampleInputPassword1').should('be.visible').type(`${user.password}{Enter}`);\ncy.wait(1000); // Consider replacing with a more robust wait if needed\ncy.xpath(\"//div/input[1]\").should('be.visible').type(`${Cypress.env(\"OTP\")}{Enter}`);\n// Assert successful login\n//cy.get('.col-md-6 > .mb-3').should(\"contain.text\", \"Neilsoft - Active Construction Sites\");\n// Optional: Logout to reset for the next user\ncy.get('.power > img').should('be.visible').click();\n//cy.xpath(\"//button[normalize-space()='Yes']\").should('be.visible').click();\ncy.get('.modal-backdrop').should('not.exist'), {\n  force: true\n};\n// Confirm document state is complete before ending test\ncy.window().then(win => {\n  cy.wrap(win).its('document.readyState').should('eq', 'complete');\n});",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected <div.modal-backdrop.fade.show> not to exist in the DOM, but it was continuously found.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected <div.modal-backdrop.fade.show> not to exist in the DOM, but it was continuously found.\n    at Context.eval (webpack://cypress-project/./cypress/e2e/Testcase/multiple users.cy.js:37:32)",
+                "diff": null
+              },
+              "uuid": "12f2ba31-cb8e-41b1-9be3-1c972a50f75c",
+              "parentUUID": "92e830d1-4e23-4fcc-9e82-0de71e4da40e",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "a1b3709b-9043-4374-abbe-8a0f9153a64c",
+            "86ed30ce-a1fa-46e7-9caa-e1633153732c",
+            "12f2ba31-cb8e-41b1-9be3-1c972a50f75c"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 20590,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress\\reports\\.jsons",
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "timestamp": "mmddyyyy_HHMMss"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

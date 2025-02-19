@@ -1,0 +1,110 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-02-18T09:47:02.897Z",
+    "end": "2025-02-18T09:47:03.119Z",
+    "duration": 222,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "43003722-a841-43f5-b004-60e95d78015f",
+      "title": "",
+      "fullFile": "cypress\\e2e\\Testcase\\multiple users.cy.js",
+      "file": "cypress\\e2e\\Testcase\\multiple users.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "54c11fc0-5182-4553-b17d-b22ca096a3eb",
+          "title": "Login Test for Multiple Users",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should login with multiple users",
+              "fullTitle": "Login Test for Multiple Users should login with multiple users",
+              "timedOut": null,
+              "duration": 206,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "[\n  {\n    \"title\": \"cypress-mochawesome-reporter-videos-failed\",\n    \"value\": \"cypress\\\\e2e\\\\Testcase\\\\multiple users.cy.js\"\n  },\n  {\n    \"title\": \"cypress-mochawesome-reporter-screenshots\",\n    \"value\": [\n      [\n        \"\\\\multiple users.cy.js\\\\Login Test for Multiple Users -- should login with multiple users -- before all hook (failed).png\"\n      ]\n    ]\n  }\n]",
+              "code": "users.forEach(user => {\n  cy.visit('http://10.1.0.83/#/login');\n  // Use user data instead of environment variables\n  cy.get('#email').type(user.email); // Use email from Excel data\n  cy.get('#exampleInputPassword1').type(user.password); // Use password from Excel data\n  cy.wait(1000);\n  cy.xpath(\"//div/input[1]\").type(user.otp); // Use OTP from Excel data\n  cy.wait(3000);\n  // Add assertions as needed\n  cy.url().should('include', '/dashboard');\n  // Logout before the next iteration\n  cy.get('#logoutButton').click();\n});",
+              "err": {
+                "message": "Error: Unsupported ZIP Compression method NaN\n\nBecause this error occurred during a `before all` hook we are skipping the remaining tests in the current suite: `Login Test for Multiple Users`",
+                "estack": "Error: Unsupported ZIP Compression method NaN\n\nBecause this error occurred during a `before all` hook we are skipping the remaining tests in the current suite: `Login Test for Multiple Users`\n    at parse_local_file (webpack://cypress-project/./node_modules/xlsx/xlsx.mjs:2753:0)\n    at parse_zip (webpack://cypress-project/./node_modules/xlsx/xlsx.mjs:2714:0)\n    at parse (webpack://cypress-project/./node_modules/xlsx/xlsx.mjs:1544:0)\n    at Object.read (webpack://cypress-project/./node_modules/xlsx/xlsx.mjs:1874:103)\n    at zip_read (webpack://cypress-project/./node_modules/xlsx/xlsx.mjs:3506:0)\n    at read_zip (webpack://cypress-project/./node_modules/xlsx/xlsx.mjs:23756:0)\n    at Module.readSync (webpack://cypress-project/./node_modules/xlsx/xlsx.mjs:23828:0)\n    at readExcel (webpack://cypress-project/./cypress/support/readExcel.js:16:24)\n    at Context.eval (webpack://cypress-project/./cypress/e2e/Testcase/multiple users.cy.js:40:24)\n    at getRet (http://10.1.0.83/__cypress/runner/cypress_runner.js:118318:20)",
+                "diff": null
+              },
+              "uuid": "2071b6c7-840e-4d17-887c-dc049d9d6497",
+              "parentUUID": "54c11fc0-5182-4553-b17d-b22ca096a3eb",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "2071b6c7-840e-4d17-887c-dc049d9d6497"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 206,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress\\reports\\.jsons",
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "timestamp": "mmddyyyy_HHMMss"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

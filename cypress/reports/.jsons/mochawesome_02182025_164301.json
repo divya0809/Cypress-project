@@ -1,0 +1,110 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-02-18T11:12:48.184Z",
+    "end": "2025-02-18T11:13:01.088Z",
+    "duration": 12904,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "1950d493-9d7c-4fe5-9a67-be06d59bf798",
+      "title": "",
+      "fullFile": "cypress\\e2e\\Testcase\\TC_02_Logout.cy.js",
+      "file": "cypress\\e2e\\Testcase\\TC_02_Logout.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "3d98ce26-10c7-4f8e-bced-805945e6bcf6",
+          "title": "Logout Test Case",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should log out successfully",
+              "fullTitle": "Logout Test Case should log out successfully",
+              "timedOut": null,
+              "duration": 12899,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "[\n  {\n    \"title\": \"cypress-mochawesome-reporter-videos-failed\",\n    \"value\": \"cypress\\\\e2e\\\\Testcase\\\\TC_02_Logout.cy.js\"\n  },\n  {\n    \"title\": \"cypress-mochawesome-reporter-screenshots\",\n    \"value\": [\n      [\n        \"\\\\TC_02_Logout.cy.js\\\\Logout Test Case -- should log out successfully (failed).png\"\n      ]\n    ]\n  }\n]",
+              "code": "cy.visit(\"http://10.1.0.83/#/login\"); // Base URL from env config\ncy.viewport(1920, 1080);\nconst com = new _Common.default();\ncom.loginProcess();\ncy.get('.power > img').click();\ncy.xpath(\"//button[normalize-space()='Yes']\").should('be.visible').click(); //assertion\n// Assert that the user is redirected to the login page after logout\ncy.url().should('include', '/login');",
+              "err": {
+                "message": "TypeError: The following error originated from your application code, not from Cypress.\n\n  > Cannot read properties of undefined (reading 'backdrop')\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application",
+                "estack": "TypeError: The following error originated from your application code, not from Cypress.\n\n  > Cannot read properties of undefined (reading 'backdrop')\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n    at ve._initializeBackDrop (http://10.1.0.83/scripts.3e75d50128144df1.js:1:51900)\n    at new ve (http://10.1.0.83/scripts.3e75d50128144df1.js:1:50815)\n    at ve.getOrCreateInstance (http://10.1.0.83/scripts.3e75d50128144df1.js:1:7927)\n    at HTMLButtonElement.<anonymous> (http://10.1.0.83/scripts.3e75d50128144df1.js:1:54760)\n    at HTMLDocument._ (http://10.1.0.83/scripts.3e75d50128144df1.js:1:4228)\n    at v.invokeTask (http://10.1.0.83/polyfills.90152602c4614c0e.js:1:7199)\n    at L.runTask (http://10.1.0.83/polyfills.90152602c4614c0e.js:1:2579)\n    at p.invokeTask [as invoke] (http://10.1.0.83/polyfills.90152602c4614c0e.js:1:8250)\n    at O (http://10.1.0.83/polyfills.90152602c4614c0e.js:1:20786)\n    at N (http://10.1.0.83/polyfills.90152602c4614c0e.js:1:21181)",
+                "diff": null
+              },
+              "uuid": "86293c2c-0ff0-4023-9719-535af62fa5de",
+              "parentUUID": "3d98ce26-10c7-4f8e-bced-805945e6bcf6",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "86293c2c-0ff0-4023-9719-535af62fa5de"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 12899,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress\\reports\\.jsons",
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "timestamp": "mmddyyyy_HHMMss"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

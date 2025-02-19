@@ -71,6 +71,7 @@ describe("Logout Test Case", () => {
        
         cy.get('.power > img').click();
         cy.xpath("//button[normalize-space()='Yes']").should('be.visible').click(); //assertion
+        cy.wait(4000)
 
         // Assert that the user is redirected to the login page after logout
         cy.url().should('include', '/login');

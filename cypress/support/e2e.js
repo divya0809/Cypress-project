@@ -16,3 +16,5 @@
 // Import commands.js using ES2015 syntax:
 import './commands'
 import 'cypress-mochawesome-reporter/register';
+//import { readExcel } from 'cypress/support/readExcel.js';
+//Cypress.Commands.add('readExcel', readExcel);

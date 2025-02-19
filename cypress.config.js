@@ -16,19 +16,13 @@ module.exports = defineConfig({
       email: "divya.chaudhari@neilsoft.com",
       password: "Neilsoft@105",
       OTP: "123459",
-      allureReuseAfterSpec: true,
-      users: [
-          { "username": "purva.bharambe@neilsoft.com", "password": "Neilsoft@1" },
-          { "username": "divya.chaudhari@neilsoft.com", "password": "Neilsoft@105" },
-          { "username": "saurabh.pawar@neilsoft.com", "password": "Neilsoft@1" },
-        ]
       
     },
     reporter: 'cypress-mochawesome-reporter',
     reporterOptions: {
-      reportDir: 'cypress/reports',
+      reportDir: 'cypress/reports/mochawesome',
       overwrite: false,
-      html: true,
+      html: false,
       json: true,
       timestamp: 'mmddyyyy_HHMMss'
 },  

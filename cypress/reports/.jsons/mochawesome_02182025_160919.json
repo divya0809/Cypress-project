@@ -1,0 +1,106 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-02-18T10:39:16.170Z",
+    "end": "2025-02-18T10:39:19.353Z",
+    "duration": 3183,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "c840b787-18d4-4d4e-bcd7-f79edee4eef1",
+      "title": "",
+      "fullFile": "cypress\\e2e\\Testcase\\TC_01_Login.cy.js",
+      "file": "cypress\\e2e\\Testcase\\TC_01_Login.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "b755c546-2fd8-4038-8dcf-4905bbf15deb",
+          "title": "Login page",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should log in using credentials from config",
+              "fullTitle": "Login page should log in using credentials from config",
+              "timedOut": null,
+              "duration": 3152,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress\\\\e2e\\\\Testcase\\\\TC_01_Login.cy.js\"\n}",
+              "code": "const login = new _loginpage.default();\ncy.visit(\"http\\://10.1.0.83/\\#/\") // Visit login page\n.viewport(1920, 1080) // Full HD resolution\n.then(() => {\n  cy.log('Visited login page successfully');\n});\ncy.then(() => {\n  login.clickAccept();\n}).then(() => {\n  cy.log('Accepted cookies successfully');\n});\ncy.then(() => {\n  if (!Cypress.env(\"email\")) {\n    throw new Error('Email is not set in Cypress environment variables');\n  }\n  login.setemail(Cypress.env(\"email\"));\n}).then(() => {\n  cy.log('Entered email successfully');\n});\ncy.then(() => {\n  if (!Cypress.env(\"password\")) {\n    throw new Error('Password is not set in Cypress environment variables');\n  }\n  login.setPassword(Cypress.env(\"password\"));\n}).then(() => {\n  cy.log('Entered password successfully');\n});\ncy.wait(1000);\ncy.then(() => {\n  if (!Cypress.env(\"OTP\")) {\n    throw new Error('OTP is not set in Cypress environment variables');\n  }\n  login.setOTP(Cypress.env(\"OTP\"));\n}).then(() => {\n  cy.log('Entered OTP successfully');\n});\n// Validation of the login page\ncy.then(() => {\n  login.verifyLogin();\n}).then(() => {\n  cy.log('Login verified successfully');\n});",
+              "err": {},
+              "uuid": "db5961f7-4b6a-4613-8d1b-c65d60235e0f",
+              "parentUUID": "b755c546-2fd8-4038-8dcf-4905bbf15deb",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "db5961f7-4b6a-4613-8d1b-c65d60235e0f"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 3152,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress\\reports\\.jsons",
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "timestamp": "mmddyyyy_HHMMss"
+      },
+      "version": "6.2.0"
+    }
+  }
+}
